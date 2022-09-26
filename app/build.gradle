@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -62,4 +63,8 @@ dependencies {
 
     //koin
     implementation "io.insert-koin:koin-android:3.2.0"
+
+    //lottie
+    implementation "com.airbnb.android:lottie:5.0.3"
+
 }

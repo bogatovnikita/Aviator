@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.elephant.aviator.ui.splash.SplashFragment"
-        android:label="SplashFragment" >
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_listOfAircraftFragment"
             app:destination="@id/listOfAircraftFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/nav_graph" />
     </fragment>
     <fragment
         android:id="@+id/listOfAircraftFragment"
         android:name="com.elephant.aviator.ui.list_of_aircraft.ListOfAircraftFragment"
-        android:label="ListOfAircraftFragment" >
+        android:label="ListOfAircraftFragment">
         <action
             android:id="@+id/action_listOfAircraftFragment_to_descriptionAircraftFragment"
             app:destination="@id/descriptionAircraftFragment" />
