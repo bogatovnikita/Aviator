@@ -59,4 +59,7 @@ dependencies {
     //autosize
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.intuit.ssp:ssp-android:1.1.0'
+
+    //koin
+    implementation "io.insert-koin:koin-android:3.2.0"
 }
