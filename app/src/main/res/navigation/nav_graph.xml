@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.elephant.aviator.ui.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_listOfAircraftFragment"
+            app:destination="@id/listOfAircraftFragment"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfAircraftFragment"
+        android:name="com.elephant.aviator.ui.list_of_aircraft.ListOfAircraftFragment"
+        android:label="ListOfAircraftFragment" >
+        <action
+            android:id="@+id/action_listOfAircraftFragment_to_descriptionAircraftFragment"
+            app:destination="@id/descriptionAircraftFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/descriptionAircraftFragment"
+        android:name="com.elephant.aviator.ui.description_aircraft.DescriptionAircraftFragment"
+        android:label="DescriptionAircraftFragment" />
+</navigation>
