@@ -1,4 +1,4 @@
-package com.elephant.data.storage.models
+package com.elephant.data.models
 
 data class InfoModel(
     val images: Set<String>,

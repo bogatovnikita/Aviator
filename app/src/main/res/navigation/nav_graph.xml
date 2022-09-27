@@ -25,7 +25,11 @@
         android:label="ListOfAircraftFragment">
         <action
             android:id="@+id/action_listOfAircraftFragment_to_descriptionAircraftFragment"
-            app:destination="@id/descriptionAircraftFragment" />
+            app:destination="@id/descriptionAircraftFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
     </fragment>
     <fragment
         android:id="@+id/descriptionAircraftFragment"

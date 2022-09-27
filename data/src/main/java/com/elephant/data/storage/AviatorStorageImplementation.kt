@@ -1,10 +1,9 @@
-package com.elephant.data.storage.converter
+package com.elephant.data.storage
 
 import android.content.Context
-import com.elephant.data.storage.AviatorStorage
 import java.io.IOException
 
-class ConverterJsonToList(val context: Context) : AviatorStorage {
+class AviatorStorageImplementation(val context: Context) : AviatorStorage {
 
     override fun get(fileName: String): String {
         var jsonString = ""
