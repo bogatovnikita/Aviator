@@ -51,9 +51,7 @@ class AircraftCardAdapter(private val listener: Listener) :
             if (aircraft.images.isEmpty()) {
                 picture.setImageResource(R.drawable.ic_no_picture)
             } else {
-                val countPicture = aircraft.images.size
-                val randomPicture = (0 until countPicture).random()
-                picture.load(aircraft.images.elementAt(randomPicture)) {
+                picture.load(aircraft.images.elementAt(0)) {
                     placeholder(R.drawable.ic_image_search)
                 }
             }

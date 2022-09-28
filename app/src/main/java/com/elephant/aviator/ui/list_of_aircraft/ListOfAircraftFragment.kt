@@ -1,11 +1,13 @@
 package com.elephant.aviator.ui.list_of_aircraft
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elephant.aviator.adapters.AircraftCardAdapter
 import com.elephant.aviator.databinding.FragmentListOfAircraftBinding
@@ -37,10 +39,16 @@ class ListOfAircraftFragment : Fragment() {
     private fun initAdapter() {
         adapter = AircraftCardAdapter(object : AircraftCardAdapter.Listener {
             override fun onCLickInfoModel(infoModel: InfoModel) {
-                Toast.makeText(requireContext(), infoModel.title, Toast.LENGTH_SHORT).show()
+                navigateTo(infoModel)
             }
         })
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        val orientation = resources.configuration.orientation
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            binding.recyclerView.layoutManager =
+                GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
+        } else {
+            binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        }
         binding.recyclerView.adapter = adapter
     }
 
@@ -48,6 +56,14 @@ class ListOfAircraftFragment : Fragment() {
         viewModel.state.observe(viewLifecycleOwner) {
             adapter.submitList(it.listOfAircraft)
         }
+    }
+
+    private fun navigateTo(aircraft: InfoModel) {
+        findNavController().navigate(
+            ListOfAircraftFragmentDirections.actionListOfAircraftFragmentToDescriptionAircraftFragment(
+                aircraft = aircraft
+            )
+        )
     }
 
 

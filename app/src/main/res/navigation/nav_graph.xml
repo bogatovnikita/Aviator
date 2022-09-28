@@ -22,7 +22,8 @@
     <fragment
         android:id="@+id/listOfAircraftFragment"
         android:name="com.elephant.aviator.ui.list_of_aircraft.ListOfAircraftFragment"
-        android:label="ListOfAircraftFragment">
+        android:label="ListOfAircraftFragment"
+        tools:layout="@layout/fragment_list_of_aircraft">
         <action
             android:id="@+id/action_listOfAircraftFragment_to_descriptionAircraftFragment"
             app:destination="@id/descriptionAircraftFragment"
@@ -34,5 +35,10 @@
     <fragment
         android:id="@+id/descriptionAircraftFragment"
         android:name="com.elephant.aviator.ui.description_aircraft.DescriptionAircraftFragment"
-        android:label="DescriptionAircraftFragment" />
+        android:label="DescriptionAircraftFragment"
+        tools:layout="@layout/fragment_description_aircraft">
+        <argument
+            android:name="aircraft"
+            app:argType="com.elephant.domain.models.InfoModel" />
+    </fragment>
 </navigation>
