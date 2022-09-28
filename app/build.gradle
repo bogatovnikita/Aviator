@@ -70,6 +70,6 @@ dependencies {
     //coil
     implementation 'io.coil-kt:coil:2.2.0'
 
-
-
+    //dots for VP
+    implementation "com.tbuonomo:dotsindicator:4.3"
 }
